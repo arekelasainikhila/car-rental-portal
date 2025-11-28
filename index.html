@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RentMyCar - Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">RentMyCar</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="cars.html">Cars</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <button id="darkToggle" class="btn tiny">🌙</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>Drive Your Dream Car Today</h1>
+        <p class="muted">Affordable. Fast. Trusted.</p>
+
+        <form id="searchForm" class="search-box" onsubmit="goToCars(event)">
+          <input id="qLocation" placeholder="Pick-up location" />
+          <input id="qBudget" type="number" placeholder="Budget/day (₹)" />
+          <select id="qPurpose">
+            <option value="">Any purpose</option>
+            <option value="city">City</option>
+            <option value="family">Family</option>
+            <option value="luxury">Luxury</option>
+            <option value="sports">Sports</option>
+          </select>
+          <button class="btn">Find Cars</button>
+        </form>
+
+        <div class="hero-cta">
+          <a class="btn big" href="cars.html">Explore Cars</a>
+          <a class="btn ghost" href="booking.html">Book Now</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="features container">
+      <div class="card glass">
+        <h3>Compare Cars</h3>
+        <p>Select two cars on the Cars page and click Compare.</p>
+      </div>
+      <div class="card glass">
+        <h3>Real-time Price</h3>
+        <p>Booking page calculates total cost: days × price/day.</p>
+      </div>
+      <div class="card glass">
+        <h3>Save Favorites</h3>
+        <p>Click the heart to save cars for later (stored locally).</p>
+      </div>
+    </section>
+
+    <section class="testimonials container">
+      <h2>What customers say</h2>
+      <div id="testimonialSlider" class="slider">
+        <!-- injected by JS -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>© <span id="year"></span> RentMyCar • Built by Navya</div>
+    <div class="social">Follow: <a href="#">LinkedIn</a> • <a href="#">GitHub</a></div>
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>

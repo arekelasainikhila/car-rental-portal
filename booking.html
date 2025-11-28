@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RentMyCar - Booking</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">RentMyCar</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="cars.html">Cars</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <button id="darkToggle" class="btn tiny">🌙</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>Booking</h2>
+    <div class="card">
+      <form id="bookingForm" onsubmit="submitBooking(event)">
+        <label>Selected Car</label>
+        <select id="bookCar"></select>
+
+        <label>Full name</label>
+        <input id="bookName" required />
+
+        <label>Email</label>
+        <input id="bookEmail" type="email" required />
+
+        <label>Pickup date</label>
+        <input id="pickup" type="date" required />
+
+        <label>Return date</label>
+        <input id="return" type="date" required />
+
+        <label>Payment option</label>
+        <select id="payOption">
+          <option>Pay at pickup</option>
+          <option>Online (mock)</option>
+        </select>
+
+        <div class="price-row">
+          <div>Total days: <span id="totalDays">0</span></div>
+          <div>Price per day: ₹<span id="priceDay">0</span></div>
+          <div>Total: ₹<span id="totalPrice">0</span></div>
+        </div>
+
+        <button class="btn" type="button" onclick="calculatePrice()">Calculate Price</button>
+        <button class="btn" type="submit">Confirm Booking</button>
+      </form>
+    </div>
+  </main>
+
+  <!-- Confirmation Modal -->
+  <div id="confirmModal" class="modal hidden">
+    <div class="modal-content">
+      <button class="close" onclick="closeConfirm()">✕</button>
+      <h3>Booking Confirmed</h3>
+      <p id="confirmText"></p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div>© <span id="year3"></span> RentMyCar</div>
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RentMyCar - Cars</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">RentMyCar</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="cars.html" class="active">Cars</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <button id="darkToggle" class="btn tiny">🌙</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="filter-row">
+      <div>
+        <label>Type:</label>
+        <select id="filterType">
+          <option value="">All</option>
+          <option value="sedan">Sedan</option>
+          <option value="suv">SUV</option>
+          <option value="luxury">Luxury</option>
+          <option value="sports">Sports</option>
+        </select>
+      </div>
+      <div>
+        <label>Max Price/day (₹):</label>
+        <input id="filterPrice" type="number" placeholder="e.g. 4000" />
+      </div>
+      <div>
+        <button class="btn" onclick="renderCars()">Apply</button>
+        <button class="btn ghost" onclick="clearFilters()">Clear</button>
+      </div>
+    </section>
+
+    <section>
+      <h2 style="text-align:center">Available Cars</h2>
+      <div id="carsGrid" class="cars-grid">
+        <!-- injected by JS -->
+      </div>
+    </section>
+
+    <section style="margin-top:40px">
+      <h3>Saved Favorites</h3>
+      <div id="favoritesGrid" class="cars-grid"></div>
+    </section>
+  </main>
+
+  <!-- Compare Modal -->
+  <div id="compareModal" class="modal hidden">
+    <div class="modal-content">
+      <button class="close" onclick="closeCompare()">✕</button>
+      <h3>Compare Cars</h3>
+      <div id="compareArea" class="compare-area"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div>© <span id="year2"></span> RentMyCar</div>
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
